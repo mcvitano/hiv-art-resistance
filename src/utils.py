@@ -1764,10 +1764,6 @@ def parse_phenotypic_reports(path_to_zips, test_type):
 
     df.loc[mrn_length < 7, 'PAT_MRN_ID'] = df['PAT_MRN_ID'].str.zfill(7)
 
-    # Manual fix (no info on PDF)
-    # df.loc[df['DOC_NAME'] == '96063822_18-184109-1GN-0_F.PDF',
-    #       'ACCESSION'] = '18-184109'
-
     print(f"{i+1} {test_type} records parsed")
 
     return df, eav_df
